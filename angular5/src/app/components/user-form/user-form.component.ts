@@ -41,8 +41,11 @@ export class UserFormComponent implements OnInit {
 
 
   processForm() {
+       if (this.user.id === undefined) {
        this.updateUser();
+    } else {
         this.createUser();
+    }
   }
 
 }

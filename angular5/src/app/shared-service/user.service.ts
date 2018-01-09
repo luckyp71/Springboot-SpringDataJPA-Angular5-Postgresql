@@ -11,10 +11,10 @@ export class UserService {
   private baseUrl: string = 'http://localhost:8090/students';
   private headers = new Headers({'Content-Type': 'application/json'});
   private options = new RequestOptions({headers: this.headers});
-  private user: User;
+  private user= new User();
 
   constructor(private _http: Http) {}
-
+  
   getUsers() {
     return this._http.get(this.baseUrl, this.options).map((response: Response) => response.json())
       .catch(this.errorHandler);
